@@ -1,0 +1,53 @@
+<div class="container" style="margin-top: 50px;">
+    {{!-- Inicio fila 1 --}}
+    <p class="text-end" id="nomuser">Hola {{usuario}}.</p>
+    {{!-- Fin fila 1 --}}
+    {{!-- Inicio fila 2 --}}
+    <div class="row">
+        <div class="col-7">
+            <h3>Últimas noticias <i class="fa-solid fa-parachute-box"></i></h3>
+        </div>
+        <div class="col-5 text-end ">
+            <a class="btn btn-success" href="/admin/novedades/agregar"><i class="fa fa-plus" aria-hidden="true"></i>
+                Agregar nueva noticia</a>
+        </div>
+    </div>
+    {{!-- Fin fila 2 --}}
+    {{!-- Inicio fila 3 --}}
+    <div class="row">
+        <div class="col">
+            <table class="table">
+                <thead>
+                    <tr class="bg-warning">
+                        {{!-- <th scope="col">#</th> --}}
+                        <th scope="col">Imagen</th>
+                        <th scope="col">Titulo</th>
+                        <th class="text-center">Cuerpo</th>
+                        <th class="text-end">Acciones</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {{#each novedades}}
+                    <tr>
+                        <td>{{{imagen}}}</td>
+                        <td>{{titulo}}</td>
+                        <td>{{cuerpo}}</td>
+                        <td class="text-end">
+                            <a class="btn btn-outline-dark" href="/admin/novedades/modificar/{{id}}"><i
+                                    class="fa fa-pencil" aria-hidden="true"></i></a>
+                            <a class="btn btn-outline-dark" href="/admin/novedades/eliminar/{{id}}"
+                                onclick="return confirm('¿Seguro quiere eliminar la noticia de: {{titulo}} ?')"><i
+                                    class="fa fa-trash" aria-hidden="true"></i></a>
+                        </td>
+                    </tr>
+                    {{/each}}
+                </tbody>
+            </table>
+        </div>
+    </div>
+    <div class="row">
+        <p class="text-end"><a class="btn btn-danger" href="/admin/login/logout">Cerrar sesión
+                <i class="fas fa-sign-out-alt"></i></a></p>
+    </div>
+    {{!-- Fin fila 3 --}}
+</div>

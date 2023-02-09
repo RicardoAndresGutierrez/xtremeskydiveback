@@ -14,7 +14,11 @@
                 <div class="mb-3 row">
                     <textarea type="text" class="form-control" placeholder="Cuerpo*" name="cuerpo"></textarea>
                 </div>
+
                 <button type="submit" class="btn btn-success">Guardar <i class="fa-solid fa-circle-check"></i></button>
+                <a class="btn btn-danger" href="/admin/novedades"><i class="fa-solid fa-circle-arrow-left"></i>
+                    Volver</a>
+
             </form>
             {{#if error}}
             <p class="message"><i class="fa-solid fa-triangle-exclamation"></i> {{message}}</p>
